@@ -19,16 +19,12 @@ function output = prepareData(imArray, ambientImage)
 imArray = imArray - ambientImage;
 [h,w,n] = size(imArray);
 mask = ones(h,w);
-%no negatives
 for i = 1:n
     mask = ones(h,w);
     im = imArray(i);
     mask(im < 0) = -1;
     im(mask < 0) = 0;
     imArray(i) = im;
-    imArray(i) = im2double(imArray(i);
 end
-imArray = imArray/255;
-
 
     
