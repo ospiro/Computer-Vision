@@ -28,7 +28,6 @@ for i = 1:n
     mask(im < 0) = -1;
     im(mask < 0) = 0;
     imArray(i) = im;
-    imArray(i) = im2double(imArray(i));
 end
 imArray = imArray/255;
 output = imArray;
