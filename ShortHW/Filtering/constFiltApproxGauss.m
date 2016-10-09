@@ -1,10 +1,10 @@
-gaussFilt = zeros(5,5);
+%gaussFilt = zeros(5,5);
 normfactor = 1/(2*pi);
 %create gaussian filter
 for i = 1:9
     for j = 1:9
-        x = j-41;
-        y = 41-i;
+        x = j-5;
+        y = 5-i;
         gaussFilt(i,j) = normfactor*exp(-0.5*(x^2 + y^2));
     end
 end
