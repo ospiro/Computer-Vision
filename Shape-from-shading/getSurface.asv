@@ -9,21 +9,17 @@ function  heightMap = getSurface(surfaceNormals, method)
 %
 % Output:
 %   HEIGHTMAP: height map of object
-[h,w,n] = size(surfaceNormals);
-f_x = surfaceNormals(:,:,1)/surfaceNormals(:,:,3);
-f_y = surfaceNormals(:,:,2)/surfaceNormals(:,:,3);
-heightMap = zeros(h,w);
+
+g_x = surfaceNormals(:,:,1)/surfaceNormals(:,:,3);
+g_y = surfaceNormals(:,:,2)/surfaceNormals(:,:,3);
 switch method
     case 'column'
-        heightMap = cumsum(f_x,1)+cumsum(f_y,2);
+        %%% implement this %%%
     case 'row'
-        heightMap = cumsum(f_x,1)+cumsum(f_y,2);
         %%% implement this %%%
     case 'average'
-        heightMap = cumsum(f_x,1)+cumsum(f_y,2);
         %%% implement this %%%
     case 'random'
-        heightMap = cumsum(f_x,1)+cumsum(f_y,2);
         %%% implement this %%%
 end
 
