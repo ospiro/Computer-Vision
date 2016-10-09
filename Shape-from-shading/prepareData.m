@@ -16,8 +16,10 @@ function output = prepareData(imArray, ambientImage)
 % Step 1. Subtract the ambientImage from each image in imArray
 % Step 2. Make sure no pixel is less than zero
 % Step 3. Rescale the values in imarray to be between 0 and 1
-imArray = imArray - ambientImage;
 [h,w,n] = size(imArray);
+for i = 1:n
+    imArray(:,:,i) = imArray(:,:,i) - ambientImage;
+end
 mask = ones(h,w);
 %no negatives
 for i = 1:n
@@ -26,9 +28,10 @@ for i = 1:n
     mask(im < 0) = -1;
     im(mask < 0) = 0;
     imArray(i) = im;
-    imArray(i) = im2double(imArray(i);
+    imArray(i) = im2double(imArray(i));
 end
 imArray = imArray/255;
+output = imArray;
 
 
     
