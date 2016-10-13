@@ -20,6 +20,7 @@ function [albedoImage, surfaceNormals] = photometricStereo(imArray, lightDirs)
 % Acknowledgement: Based on a similar homework by Lana Lazebnik
 [h,w,n] = size(imArray);
 N = zeros(h,w,3);
+albedoImage = zeros(h,w);
 for i = 1:h
     for j = 1:w
         I = imArray(i,j,:);
@@ -28,9 +29,9 @@ for i = 1:h
         g = V\I;
         rho = norm(g);
         N(i,j,:) = g/rho;
+        albedoImage(i,j) = rho;
     end
 end
-albedoImage = rho;
 surfaceNormals = N;
 
         

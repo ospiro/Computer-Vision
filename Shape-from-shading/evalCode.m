@@ -23,14 +23,14 @@
 %   Homework 2: Photometric Stereo
 
 
-dataDir     = fullfile('..','data'); % Path to your data directory
-subjectName = 'debug'; %debug, yaleB01, yaleB02, yaleB05, yaleB07
+dataDir     = fullfile('.','data'); % Path to your data directory %%%%ALTERED to use current dir instead of previous
+subjectName = 'yaleB02'; %debug, yaleB01, yaleB02, yaleB05, yaleB07
 numImages   = 128; % Total images for each surface
 debug       = true; % Set the debug flag to true to check your implementation first
 writeOutput = true; % If true then the output will be written to output 
-outputDir   = fullfile('..','output');
+outputDir   = fullfile('.','output');
 imageDir    = fullfile(dataDir, subjectName);
-integrationMethod = 'average';
+integrationMethod = 'random';
 
 %% Load images for different viewing conditions
 if strcmp(subjectName, 'debug'),

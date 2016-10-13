@@ -20,15 +20,13 @@ function output = prepareData(imArray, ambientImage)
 for i = 1:n
     imArray(:,:,i) = imArray(:,:,i) - ambientImage;
 end
-mask = ones(h,w);
 %no negatives
 for i = 1:n
-    mask = ones(h,w);
     im = imArray(:,:,i);
-    mask(im < 0) = -1;
-    im(mask < 0) = 0;
-    imArray(:,:,i) = im;%/255;
+    im(im<0)=0;
+    %imArray(:,:,i) = im/255;
 end
+imArray = imArray ./ max(imArray(:));
 %imArray = imArray/255;
 output = imArray;
 
