@@ -4,6 +4,8 @@ im2 = im2double(im2);
 normfactor1 = 1/(2*pi*sigma1*sigma1);
 normfactor2 = 1/(2*pi*sigma2*sigma2);
 g1 = zeros(9,9);
+
+%create the two filters
 for i = 1:9
     for j = 1:9
         x = j-5;
@@ -19,6 +21,8 @@ for i = 1:9
         g2(i,j) = normfactor2*exp(-0.5*(x^2 + y^2));
     end
 end
+
+%hybridize
 [h,w,n] = size(im1);
 hybridIm = zeros(h,w,n);
 for i =1:n
