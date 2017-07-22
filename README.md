@@ -24,7 +24,9 @@ photometricStereo.m
 
 getSurface.m
 
-**Recognition**:
+**Recognition**: MNIST classifiers using pixel, LBP, and HOG Features.
+
+extractDigitFeatures.m
 
 
 
