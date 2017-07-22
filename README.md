@@ -2,7 +2,7 @@ Project files for CS670: Computer Vision
 
 Projects come with evaluation files written by instructor. My own code is contained in the following:
 
-**Alignment**:
+**Alignment**: Aligning channels of an image.
 
 alignChannels.m
 alignProkChannels.,
@@ -23,5 +23,8 @@ prepareData.m
 photometricStereo.m
 
 getSurface.m
+
+**Recognition**:
+
 
 
